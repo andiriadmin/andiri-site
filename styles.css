@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0B0F19;
+    color: #f4f4f4;
+    line-height: 1.6;
+    padding: 0 1.5rem;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo img {
+    width: 40px;
+}
+
+.logo span {
+    color: #00BFFF;
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+nav a {
+    color: #f4f4f4;
+    margin-left: 1.25rem;
+    text-decoration: none;
+}
+
+.contact-btn {
+    padding: 0.4rem 0.8rem;
+    border: 1px solid #00BFFF;
+    border-radius: 4px;
+    color: #00BFFF;
+}
+
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.hero h1 {
+    font-size: 2.25rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-buttons a {
+    padding: 0.75rem 1.5rem;
+    margin: 0 0.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background-color: #00BFFF;
+    color: #000;
+}
+
+.btn-secondary {
+    border: 1px solid #00BFFF;
+    color: #00BFFF;
+}
+
+section {
+    margin-bottom: 3rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2rem;
+}
+
+h2 {
+    color: #00BFFF;
+    margin-bottom: 1rem;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.875rem;
+    color: #888;
+}
