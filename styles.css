@@ -118,3 +118,29 @@ footer {
     font-size: 0.875rem;
     color: #888;
 }
+
+.hero-logo-bar {
+    background-color: #0a0e18;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 1rem;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+.hero-logo-container {
+    text-align: center;
+}
+
+.hero-logo {
+    width: 300px;
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px;
+    box-shadow: 0 0 24px rgba(0, 191, 255, 0.4);
+}
+
+.hero-logo:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(0, 191, 255, 0.75);
+}
