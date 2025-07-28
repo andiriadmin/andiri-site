@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard | Andiri Software</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <script>
+    if (localStorage.getItem("auth") !== "true") {
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <h1 style="text-align:center;">Andiri Modules</h1>
+  <section class="app-grid">
+    <a href="tool-fleet.html" class="app-card">
+      <h3>Fleet Tracker</h3>
+      <p>Monitor vehicle location and movement</p>
+    </a>
+    <a href="tool-inventory.html" class="app-card">
+      <h3>Inventory Visualizer</h3>
+      <p>Track and update warehouse stock in real time</p>
+    </a>
+    <a href="tool-routing.html" class="app-card">
+      <h3>Route Optimizer</h3>
+      <p>Auto-plan delivery routes for cost and time</p>
+    </a>
+  </section>
+</body>
+</html>

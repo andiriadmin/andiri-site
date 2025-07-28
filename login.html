@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | Andiri Software</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="login-body">
+  <div class="login-container">
+    <h2>Secure Access</h2>
+    <input type="password" id="password" placeholder="Enter password" />
+    <button onclick="login()">Login</button>
+    <p id="login-msg"></p>
+  </div>
+  <script>
+    function login() {
+      const pass = document.getElementById('password').value;
+      if (pass === "andiri123") {
+        localStorage.setItem("auth", "true");
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById('login-msg').innerText = "Access denied.";
+      }
+    }
+  </script>
+</body>
+</html>
