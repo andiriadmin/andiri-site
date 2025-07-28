@@ -186,17 +186,45 @@
 <div class="grid-section green">
   <h3>Cargo Details</h3>
   <div class="form-grid">
-    <label>Total Weight (lbs)</label><input type="text" />
+    <label>Total Weight</label>
+    <div style="display: flex; gap: 6px;">
+      <input type="text" style="flex: 1;" />
+      <select>
+        <option value="lbs">lbs</option>
+        <option value="kg">kg</option>
+      </select>
+    </div>
+
     <label>Total Volume (cu ft)</label><input type="text" />
+
     <label>Pieces</label><input type="text" />
     <label>Pallet Count</label><input type="text" />
     <label>Commodity</label><input type="text" />
     <label>NMFC</label><input type="text" />
     <label>Hazmat</label><input type="text" />
     <label>UN Number</label><input type="text" />
-    <label>Dimensions (LxWxH)</label><input type="text" />
+
+    <label>Dimensions</label>
+    <div style="display: flex; gap: 6px;">
+      <input type="text" placeholder="L" />
+      <input type="text" placeholder="W" />
+      <input type="text" placeholder="H" />
+      <select>
+        <option value="in">in</option>
+        <option value="cm">cm</option>
+      </select>
+    </div>
+
     <label>Packaging Type</label><input type="text" />
-    <label>Accessorials</label><textarea rows="4"></textarea>
+
+    <label>Accessorials</label>
+    <select multiple style="height: 80px;">
+      <option value="liftgate">Liftgate</option>
+      <option value="residential">Residential Delivery</option>
+      <option value="limited_access">Limited Access</option>
+      <option value="inside_delivery">Inside Delivery</option>
+      <option value="appointment">Delivery Appointment</option>
+    </select>
   </div>
 </div>
 
