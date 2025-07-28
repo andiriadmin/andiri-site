@@ -1,59 +1,52 @@
 body {
     margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0d1117;
-    color: #ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f111a;
+    color: white;
 }
 
 .hero-logo-bar {
-    background-color: #0d1117;
-    padding: 2rem 0;
+    background-color: #0b0d16;
+    padding: 2rem 0 0.5rem;
     text-align: center;
 }
 
-.hero-logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .hero-logo {
-    width: 300px;
-    height: auto;
-    transition: transform 0.3s ease-in-out;
+    width: 220px;
+    transition: transform 0.3s ease;
 }
 
 .hero-logo:hover {
     transform: scale(1.1);
 }
 
-.module-login-container {
+.button-container {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+    top: 1rem;
+    right: 1rem;
 }
 
-.glow-btn {
+.glow-button {
+    padding: 0.6rem 1.4rem;
     background: #00bfff;
-    padding: 0.6rem 1.2rem;
-    color: #000;
+    color: black;
     font-weight: bold;
-    border-radius: 8px;
     border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
+    transition: transform 0.2s ease-in-out, box-shadow 0.3s;
     text-decoration: none;
-    box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
-    transition: background 0.3s, transform 0.2s;
 }
 
-.glow-btn:hover {
-    background: #009acd;
+.glow-button:hover {
     transform: scale(1.05);
+    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
 }
 
 .hero {
-    padding: 3rem;
     text-align: center;
+    padding: 2rem;
 }
 
 .hero h1 {
@@ -61,30 +54,30 @@ body {
     margin-bottom: 1rem;
 }
 
-.hero p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-}
-
 .hero-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+    margin-top: 1.5rem;
 }
 
-.features {
-    padding: 2rem 3rem;
+.hero-buttons a {
+    margin: 0 0.5rem;
 }
 
-.features h2 {
+.info-section {
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.info-section h2 {
     color: #00bfff;
+    margin-top: 2rem;
 }
 
-.features ul {
-    list-style-type: none;
+.info-section ul {
+    list-style: none;
     padding-left: 0;
 }
 
-.features li {
-    margin-bottom: 0.75rem;
+.info-section li {
+    margin-bottom: 1rem;
 }
