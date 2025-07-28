@@ -76,6 +76,7 @@
     <h1>📦 Shipments</h1>
     <p>This is where you will view and manage all shipment orders.</p>
     <div class="nav-buttons">
+      <button onclick="switchTab('orders')">📦 Orders</button>
       <button onclick="switchTab('shipments')">📦 Shipments</button>
       <button onclick="switchTab('carriers')">🚚 Carriers</button>
       <button onclick="switchTab('dispatch')">🧑‍✈️ Dispatch</button>
@@ -128,7 +129,14 @@
   </table>
 </div>
 
+    <div id="orders" class="tab-pane">
+      <p>Order data and tools will appear here.</p>
+    </div>
+    <div id="shipments" class="tab-pane">
+      <p>Shipment data and tools will appear here.</p>
+    </div>
     <div id="carriers" class="tab-pane">
+    </div>
       <p>Carrier data and tools will appear here.</p>
     </div>
     <div id="dispatch" class="tab-pane">
