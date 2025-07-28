@@ -12,7 +12,7 @@ body {
 }
 
 .hero-logo {
-  width: 200px;
+  width: 500px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: block;
   margin: 0 auto;
