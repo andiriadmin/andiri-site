@@ -143,91 +143,23 @@
 
 
     <!-- Red Section: Origin and Destination -->
-    
-<div class="grid-section red">
-  <h3>Origin</h3>
-  <div class="form-grid">
-    <label>Company</label><input type="text" />
-    <label>Contact Name</label><input type="text" />
-    <label>Phone</label><input type="text" />
-    <label>Email</label><input type="text" />
-    <label>Address 1</label><input type="text" />
-    <label>Address 2</label><input type="text" />
-    <label>City</label><input type="text" />
-    <label>State</label><input type="text" />
-    <label>ZIP</label><input type="text" />
-    <label>Country</label><input type="text" />
-    <label>Hours</label><input type="text" />
-    <label>Instructions</label><textarea rows="3"></textarea>
-  </div>
-
-  <hr style="margin: 20px 0;" />
-
-  <h3>Destination</h3>
-  <div class="form-grid">
-    <label>Company</label><input type="text" />
-    <label>Contact Name</label><input type="text" />
-    <label>Phone</label><input type="text" />
-    <label>Email</label><input type="text" />
-    <label>Address 1</label><input type="text" />
-    <label>Address 2</label><input type="text" />
-    <label>City</label><input type="text" />
-    <label>State</label><input type="text" />
-    <label>ZIP</label><input type="text" />
-    <label>Country</label><input type="text" />
-    <label>Hours</label><input type="text" />
-    <label>Instructions</label><textarea rows="3"></textarea>
-  </div>
-</div>
-
+    <div class="grid-section red">
+      <h3>Origin</h3>
+      <p>Origin Address, Contact, Date</p>
+      <h3>Destination</h3>
+      <p>Destination Address, Contact, Date</p>
+    </div>
 
     <!-- Green Section: Cargo Details -->
-    
-<div class="grid-section green">
-  <h3>Cargo Details</h3>
-  <div class="form-grid">
-    <label>Total Weight</label>
-    <div style="display: flex; gap: 6px;">
-      <input type="text" style="flex: 1;" />
-      <select>
-        <option value="lbs">lbs</option>
-        <option value="kg">kg</option>
-      </select>
+    <div class="grid-section green">
+      <h3>Cargo Details</h3>
+      <ul>
+        <li>Dimensions</li>
+        <li>Weight</li>
+        <li>Hazmat: No</li>
+        <li>Accessorials</li>
+      </ul>
     </div>
-
-    <label>Total Volume (cu ft)</label><input type="text" />
-
-    <label>Pieces</label><input type="text" />
-    <label>Pallet Count</label><input type="text" />
-    <label>Commodity</label><input type="text" />
-    <label>NMFC</label><input type="text" />
-    <label>Hazmat</label><input type="text" />
-    <label>UN Number</label><input type="text" />
-
-    <label>Dimensions</label>
-    <div style="display: flex; gap: 6px;">
-      <input type="text" placeholder="L" />
-      <input type="text" placeholder="W" />
-      <input type="text" placeholder="H" />
-      <select>
-        <option value="in">in</option>
-        <option value="cm">cm</option>
-      </select>
-    </div>
-
-    <label>Packaging Type</label><input type="text" />
-
-    <label>Accessorials</label>
-    <select multiple style="height: 80px;">
-      <option value="liftgate">Liftgate</option>
-      <option value="residential">Residential Delivery</option>
-      <option value="limited_access">Limited Access</option>
-      <option value="inside_delivery">Inside Delivery</option>
-      <option value="appointment">Delivery Appointment</option>
-    </select>
-  </div>
-</div>
-
 
     <!-- Yellow Section: Actions -->
     <div class="grid-section yellow">
