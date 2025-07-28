@@ -9,18 +9,28 @@
 <body class="login-body">
   <div class="login-container">
     <h2>Secure Access</h2>
-    <input type="password" id="password" placeholder="Enter password" />
+    <input type="email" id="email" placeholder="Email" required />
+    <input type="password" id="password" placeholder="Password" required />
     <button onclick="login()">Login</button>
     <p id="login-msg"></p>
   </div>
   <script>
+    const users = {
+      "admin@andiri.io": "andiri123",
+      "operator@andiri.io": "truckpass",
+      "manager@andiri.io": "inv123"
+    };
+
     function login() {
+      const email = document.getElementById('email').value;
       const pass = document.getElementById('password').value;
-      if (pass === "andiri123") {
+
+      if (users[email] && users[email] === pass) {
         localStorage.setItem("auth", "true");
+        localStorage.setItem("user", email);
         window.location.href = "dashboard.html";
       } else {
-        document.getElementById('login-msg').innerText = "Access denied.";
+        document.getElementById('login-msg').innerText = "Invalid credentials.";
       }
     }
   </script>
