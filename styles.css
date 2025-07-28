@@ -23,6 +23,14 @@ body {
   box-shadow: 0 0 20px #00bfff;
 }
 
+h2 {
+  text-align: center;
+  font-size: 1.75rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: #00bfff;
+}
+
 .top-bar {
     display: flex;
     justify-content: flex-end;
