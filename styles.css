@@ -12,14 +12,14 @@ body {
 }
 
 .hero-logo {
-  width: 350px;
+  width: 300px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: block;
   margin: 0 auto;
 }
 
 .hero-logo:hover {
-  transform: scale(1.25);
+  transform: scale(1.10);
   box-shadow: 0 0 20px #00bfff;
 }
 
