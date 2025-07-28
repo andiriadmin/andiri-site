@@ -17,29 +17,38 @@
       background-attachment: fixed;
     }
     .sidebar {
-      width: 240px;
+      width: 260px;
       background: rgba(0, 0, 0, 0.85);
       color: white;
       display: flex;
       flex-direction: column;
-      padding: 1rem;
+      padding: 1.5rem 1rem;
       min-height: 100vh;
     }
-    .sidebar h2 {
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
+    .sidebar h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
     }
-    .sidebar button {
+    .sidebar p {
+      font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.2rem;
+    }
+    .nav-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .nav-buttons button {
       background: #00bfff;
       border: none;
-      margin: 6px 0;
       padding: 10px;
       color: black;
       font-weight: bold;
       border-radius: 8px;
       cursor: pointer;
     }
-    .sidebar button:hover {
+    .nav-buttons button:hover {
       background: #00a8e8;
     }
     .content {
@@ -60,38 +69,41 @@
 </head>
 <body>
   <div class="sidebar">
-    <h2>Logistapro TMS</h2>
-    <button onclick="switchTab('shipments')">📦 Shipments</button>
-    <button onclick="switchTab('carriers')">🚚 Carriers</button>
-    <button onclick="switchTab('dispatch')">🧑‍✈️ Dispatch</button>
-    <button onclick="switchTab('tracking')">📍 Tracking</button>
-    <button onclick="switchTab('reports')">📊 Reports</button>
-    <button onclick="switchTab('wms')">🔗 WMS Integration</button>
-    <button onclick="window.location.href='dashboard.html'" style="margin-top:auto;">← Back to Dashboard</button>
+    <h1>📦 Shipments</h1>
+    <p>This is where you will view and manage all shipment orders.</p>
+    <div class="nav-buttons">
+      <button onclick="switchTab('shipments')">📦 Shipments</button>
+      <button onclick="switchTab('carriers')">🚚 Carriers</button>
+      <button onclick="switchTab('dispatch')">🧑‍✈️ Dispatch</button>
+      <button onclick="switchTab('tracking')">📍 Tracking</button>
+      <button onclick="switchTab('reports')">📊 Reports</button>
+      <button onclick="switchTab('wms')">🔗 WMS Integration</button>
+      <button onclick="window.location.href='dashboard.html'" style="margin-top:20px;">← Back to Dashboard</button>
+    </div>
   </div>
   <div class="content">
     <div id="shipments" class="tab-pane active">
-      <h1>📦 Shipments</h1>
+      <h2>📦 Shipments</h2>
       <p>This is where you will view and manage all shipment orders.</p>
     </div>
     <div id="carriers" class="tab-pane">
-      <h1>🚚 Carriers</h1>
+      <h2>🚚 Carriers</h2>
       <p>Manage carrier integrations and book loads here.</p>
     </div>
     <div id="dispatch" class="tab-pane">
-      <h1>🧑‍✈️ Dispatch</h1>
+      <h2>🧑‍✈️ Dispatch</h2>
       <p>Assign loads and manage dispatch activity.</p>
     </div>
     <div id="tracking" class="tab-pane">
-      <h1>📍 Tracking</h1>
+      <h2>📍 Tracking</h2>
       <p>Live tracking for in-transit shipments.</p>
     </div>
     <div id="reports" class="tab-pane">
-      <h1>📊 Reports</h1>
+      <h2>📊 Reports</h2>
       <p>View logistics KPIs and analytics dashboards.</p>
     </div>
     <div id="wms" class="tab-pane">
-      <h1>🔗 WMS Integration (Extensiv)</h1>
+      <h2>🔗 WMS Integration (Extensiv)</h2>
       <p>Orders from Extensiv WMS will populate here via API.</p>
     </div>
   </div>
