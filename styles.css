@@ -1,106 +1,90 @@
-
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0e1116;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d1117;
     color: #ffffff;
 }
 
 .hero-logo-bar {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    background-color: #0b0d12;
-    padding: 1.2rem 2rem;
-    position: relative;
+    background-color: #0d1117;
+    padding: 2rem 0;
+    text-align: center;
 }
 
 .hero-logo-container {
-    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .hero-logo {
-    width: 240px;
+    width: 300px;
     height: auto;
-    display: block;
-    margin: 0 auto;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease-in-out;
 }
 
 .hero-logo:hover {
+    transform: scale(1.1);
+}
+
+.module-login-container {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+}
+
+.glow-btn {
+    background: #00bfff;
+    padding: 0.6rem 1.2rem;
+    color: #000;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    text-decoration: none;
+    box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.glow-btn:hover {
+    background: #009acd;
     transform: scale(1.05);
 }
 
-.module-login-btn {
-    position: absolute;
-    top: 1.5rem;
-    left: 1.5rem;
-    background-color: #00bfff;
-    color: #000;
-    padding: 0.6rem 1.4rem;
-    font-weight: bold;
-    border: none;
-    border-radius: 10px;
-    text-decoration: none;
-    box-shadow: 0 0 12px #00bfff;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.module-login-btn:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 20px #00bfff;
-}
-
-main.hero {
+.hero {
+    padding: 3rem;
     text-align: center;
-    padding: 2rem 2rem 4rem;
 }
 
 .hero h1 {
     font-size: 2rem;
-    font-weight: bold;
     margin-bottom: 1rem;
 }
 
 .hero p {
     font-size: 1.1rem;
-    max-width: 700px;
-    margin: 0 auto 2rem;
+    margin-bottom: 2rem;
 }
 
-.hero-buttons .btn {
-    margin: 0 1rem;
-    padding: 0.75rem 1.5rem;
-    background-color: #00bfff;
-    color: #000;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 10px;
-    box-shadow: 0 0 10px #00bfff;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
-.hero-buttons .btn:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 18px #00bfff;
+.features {
+    padding: 2rem 3rem;
 }
 
-section.info {
-    padding: 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-section.info h2 {
+.features h2 {
     color: #00bfff;
-    margin-bottom: 1rem;
 }
 
-section.info ul {
+.features ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-section.info li {
-    margin-bottom: 1rem;
+.features li {
+    margin-bottom: 0.75rem;
 }
