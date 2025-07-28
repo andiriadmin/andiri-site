@@ -124,12 +124,15 @@
 .form-grid {
   display: grid;
   grid-template-columns: 140px 1fr;
-  gap: 10px 20px;
+  row-gap: 6px;
+  column-gap: 15px;
   align-items: center;
   margin-top: 10px;
 }
 .form-grid input,
 .form-grid textarea {
+  border-radius: 6px;
+  box-sizing: border-box;
   width: 100%;
   padding: 5px 8px;
   font-size: 0.9rem;
