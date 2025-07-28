@@ -17,6 +17,8 @@
       background-attachment: fixed;
     }
     .sidebar {
+      position: relative;
+      z-index: 1;
       width: 260px;
       background: rgba(0, 0, 0, 0.85);
       color: white;
@@ -53,6 +55,8 @@
     }
     .content {
       flex: 1;
+      position: relative;
+      z-index: 0;
       padding: 2rem;
       backdrop-filter: blur(3px);
       background-color: rgba(0, 0, 0, 0.6);
