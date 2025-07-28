@@ -51,12 +51,15 @@ h2 {
 .login-btn:hover {
     transform: scale(1.05);
 }
+
 .login-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
   margin-top: 30px;
+  flex-wrap: wrap;      /* Add this */
+  width: 100%;          /* Add this */
 }
 
 /* Style the login title */
