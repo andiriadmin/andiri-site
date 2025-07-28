@@ -1,50 +1,100 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0e0f16;
-    color: white;
-    display: flex;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0d1117;
+  color: white;
 }
 
-.sidebar {
-    width: 250px;
-    background-color: #1a1c25;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+.hero-logo-bar {
+  background-color: #0b0f1a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
 
-.sidebar h2 {
-    color: #00bfff;
-    margin-bottom: 20px;
+.hero-logo-container {
+  text-align: center;
+  margin: auto;
+}
+
+.hero-logo {
+  max-width: 280px;
+  height: auto;
+  display: block;
+  margin: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.hero-logo:hover {
+  transform: scale(1.1);
+}
+
+.module-login-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  padding: 0.6rem 1.4rem;
+  background-color: #00bfff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #00bfff;
+  transition: all 0.3s ease-in-out;
+}
+
+.module-login-btn:hover {
+  background-color: #009acd;
+  box-shadow: 0 0 20px #00bfff;
+  transform: scale(1.05);
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 .glow-btn {
-    background-color: #00bfff;
-    color: #000;
-    padding: 12px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 6px;
-    font-weight: bold;
-    text-align: center;
-    text-decoration: none;
-    box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
-    transition: all 0.3s ease-in-out;
-    display: block;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  background-color: #00bfff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 0 10px #00bfff;
+  transition: all 0.3s ease-in-out;
 }
 
 .glow-btn:hover {
-    box-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff;
-    transform: scale(1.05);
+  background-color: #009acd;
+  box-shadow: 0 0 20px #00bfff;
+  transform: scale(1.05);
 }
 
-.logout {
-    margin-top: auto;
+.info {
+  padding: 2rem;
 }
 
-.main-content {
-    flex-grow: 1;
-    padding: 50px;
+.info h2 {
+  color: #00bfff;
+  margin-top: 2rem;
 }
