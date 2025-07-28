@@ -151,15 +151,68 @@
     </div>
 
     <!-- Green Section: Cargo Details -->
-    <div class="grid-section green">
-      <h3>Cargo Details</h3>
-      <ul>
-        <li>Dimensions</li>
-        <li>Weight</li>
-        <li>Hazmat: No</li>
-        <li>Accessorials</li>
-      </ul>
+    
+<div class="grid-section green">
+  <h3>Cargo Details</h3>
+  <div class="form-grid">
+    <label>Total Weight</label>
+    <div style="display: flex; gap: 6px;">
+      <input type="text" style="flex: 1;" />
+      <select>
+        <option value="lbs">lbs</option>
+        <option value="kg">kg</option>
+      </select>
     </div>
+
+    <label>Total Volume (cu ft)</label><input type="text" />
+    <label>Units</label><input type="text" />
+    <label>Unit Type</label><input type="text" />
+    <label>Pallet Count</label><input type="text" />
+    <label>Commodity</label><input type="text" />
+    <label>NMFC</label><input type="text" />
+
+    <label>Dimensions</label>
+    <div style="display: flex; gap: 6px;">
+      <input type="text" placeholder="L" />
+      <input type="text" placeholder="W" />
+      <input type="text" placeholder="H" />
+      <select>
+        <option value="in">in</option>
+        <option value="cm">cm</option>
+      </select>
+    </div>
+
+    <label>Hazmat</label><input type="text" />
+    <label>UN Number</label><input type="text" />
+
+    <label>Accessorials</label>
+    <select id="accessorialSelect">
+      <option value="">-- Select --</option>
+      <option value="Liftgate">Liftgate</option>
+      <option value="Residential Delivery">Residential Delivery</option>
+      <option value="Limited Access">Limited Access</option>
+      <option value="Inside Delivery">Inside Delivery</option>
+      <option value="Delivery Appointment">Delivery Appointment</option>
+    </select>
+    <textarea id="accessorialOutput" rows="3" readonly></textarea>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const select = document.getElementById("accessorialSelect");
+  const output = document.getElementById("accessorialOutput");
+
+  select.addEventListener("change", function () {
+    const value = this.value;
+    if (value && !output.value.includes(value)) {
+      output.value += (output.value ? "\n" : "") + value;
+    }
+    this.selectedIndex = 0;
+  });
+});
+</script>
+
 
     <!-- Yellow Section: Actions -->
     <div class="grid-section yellow">
