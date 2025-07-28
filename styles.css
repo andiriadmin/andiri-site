@@ -1,83 +1,50 @@
 body {
     margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0f111a;
+    font-family: Arial, sans-serif;
+    background-color: #0e0f16;
     color: white;
+    display: flex;
 }
 
-.hero-logo-bar {
-    background-color: #0b0d16;
-    padding: 2rem 0 0.5rem;
-    text-align: center;
+.sidebar {
+    width: 250px;
+    background-color: #1a1c25;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
 
-.hero-logo {
-    width: 220px;
-    transition: transform 0.3s ease;
-}
-
-.hero-logo:hover {
-    transform: scale(1.1);
-}
-
-.button-container {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-}
-
-.glow-button {
-    padding: 0.6rem 1.4rem;
-    background: #00bfff;
-    color: black;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff;
-    transition: transform 0.2s ease-in-out, box-shadow 0.3s;
-    text-decoration: none;
-}
-
-.glow-button:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px #00ffff, 0 0 30px #00ffff, 0 0 40px #00ffff;
-}
-
-.hero {
-    text-align: center;
-    padding: 2rem;
-}
-
-.hero h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-.hero-buttons {
-    margin-top: 1.5rem;
-}
-
-.hero-buttons a {
-    margin: 0 0.5rem;
-}
-
-.info-section {
-    padding: 3rem 2rem;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.info-section h2 {
+.sidebar h2 {
     color: #00bfff;
-    margin-top: 2rem;
+    margin-bottom: 20px;
 }
 
-.info-section ul {
-    list-style: none;
-    padding-left: 0;
+.glow-btn {
+    background-color: #00bfff;
+    color: #000;
+    padding: 12px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 0 10px #00bfff, 0 0 20px #00bfff;
+    transition: all 0.3s ease-in-out;
+    display: block;
 }
 
-.info-section li {
-    margin-bottom: 1rem;
+.glow-btn:hover {
+    box-shadow: 0 0 20px #00bfff, 0 0 30px #00bfff;
+    transform: scale(1.05);
+}
+
+.logout {
+    margin-top: auto;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 50px;
 }

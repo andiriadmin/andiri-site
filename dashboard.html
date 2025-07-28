@@ -1,71 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dashboard | Andiri Software</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard | Andiri Software</title>
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <script>
-    if (localStorage.getItem("auth") !== "true") {
-      window.location.href = "login.html";
-    }
+    <div class="sidebar">
+        <h2>Modules</h2>
+        <a href="tool-fleet.html" class="glow-btn">Fleet Tracker</a>
+        <a href="tool-inventory.html" class="glow-btn">Inventory Visualizer</a>
+        <a href="tool-routing.html" class="glow-btn">Route Optimizer</a>
+        <button onclick="logout()" class="glow-btn logout">Logout</button>
+    </div>
+    <div class="main-content">
+        <h1>Andiri Modules</h1>
+        <p>Welcome, <span id="username"></span></p>
+    </div>
+    <script>
+        const user = localStorage.getItem("user");
+        const auth = localStorage.getItem("auth");
 
-    const userRoles = {
-      "admin@andiri.io": "admin",
-      "operator@andiri.io": "fleet",
-      "manager@andiri.io": "inventory"
-    };
+        if (!auth || auth !== "true") {
+            window.location.href = "login.html";
+        }
 
-    const currentUser = localStorage.getItem("user");
-    const role = userRoles[currentUser];
-  </script>
+        document.getElementById("username").textContent = user;
 
-  <h1 style="text-align:center;">Andiri Modules</h1>
-  <p style="text-align:center;">Welcome, <span id="username"></span></p>
-
-  <section class="app-grid" id="modules">
-    <!-- Modules will be injected here based on role -->
-  </section>
-
-  <div style="text-align:center; margin-top: 2rem;">
-    <button onclick="logout()" style="padding: 0.6rem 1.2rem; border: none; background: #00BFFF; color: #000; font-weight: bold; border-radius: 8px;">Logout</button>
-  </div>
-
-  <script>
-    document.getElementById("username").textContent = currentUser;
-
-    const moduleContainer = document.getElementById("modules");
-
-    const modulesByRole = {
-      admin: [
-        { title: "Fleet Tracker", desc: "Monitor vehicle location and movement", link: "tool-fleet.html" },
-        { title: "Inventory Visualizer", desc: "Track and update warehouse stock", link: "tool-inventory.html" },
-        { title: "Route Optimizer", desc: "Plan optimized delivery routes", link: "tool-routing.html" }
-      ],
-      fleet: [
-        { title: "Fleet Tracker", desc: "Monitor vehicle location and movement", link: "tool-fleet.html" }
-      ],
-      inventory: [
-        { title: "Inventory Visualizer", desc: "Track and update warehouse stock", link: "tool-inventory.html" }
-      ]
-    };
-
-    const userModules = modulesByRole[role] || [];
-
-    for (const mod of userModules) {
-      const el = document.createElement("a");
-      el.href = mod.link;
-      el.className = "app-card";
-      el.innerHTML = `<h3>${mod.title}</h3><p>${mod.desc}</p>`;
-      moduleContainer.appendChild(el);
-    }
-
-    function logout() {
-      localStorage.clear();
-      window.location.href = "login.html";
-    }
-  </script>
+        function logout() {
+            localStorage.clear();
+            window.location.href = "index.html";
+        }
+    </script>
 </body>
 </html>
