@@ -1,146 +1,124 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background-color: #0B0F19;
-    color: #f4f4f4;
-    line-height: 1.6;
-    padding: 0 1.5rem;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0d1117;
+  color: #e6edf3;
 }
 
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #1f1f1f;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.logo img {
-    width: 80px;       /* increase from 40px to 80px */
-    height: auto;
-    margin-right: 12px;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(0, 191, 255, 0.3);
-}
-
-}
-
-.logo span {
-    color: #00BFFF;
-    font-weight: bold;
-    font-size: 1.5rem; /* increase from 1.25rem */
-}
-
-}
-
-nav a {
-    color: #f4f4f4;
-    margin-left: 1.25rem;
-    text-decoration: none;
-}
-
-.contact-btn {
-    padding: 0.4rem 0.8rem;
-    border: 1px solid #00BFFF;
-    border-radius: 4px;
-    color: #00BFFF;
-}
-
-.hero {
-    text-align: center;
-    padding: 4rem 0;
-}
-
-.hero h1 {
-    font-size: 2.25rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    font-size: 1.125rem;
-    margin-bottom: 2rem;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.cta-buttons a {
-    padding: 0.75rem 1.5rem;
-    margin: 0 0.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.btn-primary {
-    background-color: #00BFFF;
-    color: #000;
-}
-
-.btn-secondary {
-    border: 1px solid #00BFFF;
-    color: #00BFFF;
-}
-
-section {
-    margin-bottom: 3rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 2rem;
-}
-
-h2 {
-    color: #00BFFF;
-    margin-bottom: 1rem;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem 0;
-    font-size: 0.875rem;
-    color: #888;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .hero-logo-bar {
-    background-color: #0a0e18;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 4rem 1rem;
-    border-bottom: 1px solid #1f1f1f;
+  background-color: #111827;
+  padding: 2rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-logo-container {
-    text-align: center;
+  text-align: center;
 }
 
 .hero-logo {
-    width: 300px;
-    height: auto;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 12px;
-    box-shadow: 0 0 24px rgba(0, 191, 255, 0.4);
+  width: 250px;
+  height: auto;
+  transition: transform 0.3s ease;
 }
 
 .hero-logo:hover {
-    transform: scale(1.08);
-    box-shadow: 0 0 40px rgba(0, 191, 255, 0.75);
+  transform: scale(1.1);
+}
+
+main {
+  padding: 2rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #00BFFF;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  box-shadow: 0 0 10px #00BFFF;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00BFFF;
+}
+
+.btn.secondary {
+  background-color: transparent;
+  border: 2px solid #00BFFF;
+  color: #00BFFF;
+}
+
+.features {
+  margin-top: 3rem;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.features h2 {
+  margin-top: 2rem;
+  color: #00BFFF;
+}
+
+.features ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.features li {
+  margin: 0.5rem 0;
+}
+
+.homepage-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.login-btn {
+  padding: 0.6rem 1.2rem;
+  background-color: #00BFFF;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 8px;
+  box-shadow: 0 0 15px #00BFFF;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px #00BFFF;
 }
