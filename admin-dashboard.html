@@ -1,79 +1,148 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Admin Portal | Andiri Software</title>
-  <link rel="stylesheet" href="dashboard.css" />
-  <script>
-    window.onload = function () {
-      const role = localStorage.getItem("role");
-      if (role !== "ADMIN") {
-        alert("Access denied. Admins only.");
-        window.location.href = "index.html";
-        return;
-      }
-    };
-  </script>
+  <title>Admin Dashboard | Andiri Software</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      background-color: #0f111a;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .admin-container {
+      max-width: 900px;
+      margin: 3rem auto;
+      background-color: #11131f;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+    }
+
+    .admin-title {
+      text-align: center;
+      color: #00bfff;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .admin-links {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .admin-links a {
+      color: #00bfff;
+      text-decoration: none;
+      margin: 0 1rem;
+    }
+
+    .access-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+
+    .access-table th,
+    .access-table td {
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #333;
+    }
+
+    .access-table th {
+      color: #00bfff;
+    }
+
+    .glow-btn {
+      background-color: #00bfff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px #00bfff;
+      transition: transform 0.2s;
+      display: inline-block;
+      margin-top: 2rem;
+    }
+
+    .glow-btn:hover {
+      transform: scale(1.05);
+    }
+  </style>
 </head>
 <body>
-  <div class="sidebar">
-    <h2>ADMIN PORTAL</h2>
-    <a href="dashboard.html" class="glow-btn sidebar-btn">Back to Dashboard</a>
-    <button onclick="logout()" class="glow-btn sidebar-btn">Logout</button>
+  <div class="admin-container">
+    <div class="admin-title">ADMIN PORTAL</div>
+    <div class="admin-links">
+      <a href="dashboard.html">← Back to Dashboard</a>
+      <button class="glow-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <h2 style="text-align:center; color:#00bfff;">Manage Role Access</h2>
+    <form id="access-form">
+      <table class="access-table">
+        <thead>
+          <tr>
+            <th>Module</th>
+            <th>DISPATCH</th>
+            <th>ANALYTICS</th>
+            <th>FINANCIAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>LOGISTAPRO TMS</td>
+            <td><input type="checkbox" name="logistapro-dispatch" /></td>
+            <td><input type="checkbox" name="logistapro-analytics" /></td>
+            <td><input type="checkbox" name="logistapro-financial" /></td>
+          </tr>
+          <tr>
+            <td>COMMERCIAL INVOICE BUILDER</td>
+            <td><input type="checkbox" name="invoice-dispatch" /></td>
+            <td><input type="checkbox" name="invoice-analytics" /></td>
+            <td><input type="checkbox" name="invoice-financial" /></td>
+          </tr>
+          <tr>
+            <td>RATE QUOTING TOOL</td>
+            <td><input type="checkbox" name="rate-dispatch" /></td>
+            <td><input type="checkbox" name="rate-analytics" /></td>
+            <td><input type="checkbox" name="rate-financial" /></td>
+          </tr>
+          <tr>
+            <td>PROJECT MANAGEMENT</td>
+            <td><input type="checkbox" name="project-dispatch" /></td>
+            <td><input type="checkbox" name="project-analytics" /></td>
+            <td><input type="checkbox" name="project-financial" /></td>
+          </tr>
+          <tr>
+            <td>PERFORMANCE MANAGEMENT</td>
+            <td><input type="checkbox" name="performance-dispatch" /></td>
+            <td><input type="checkbox" name="performance-analytics" /></td>
+            <td><input type="checkbox" name="performance-financial" /></td>
+          </tr>
+        </tbody>
+      </table>
+      <div style="text-align:center;">
+        <button type="submit" class="glow-btn">Save Access Settings</button>
+      </div>
+    </form>
   </div>
-  <div class="dashboard-content">
-    <h1>Manage Role Access</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Module</th>
-          <th>DISPATCH</th>
-          <th>ANALYTICS</th>
-          <th>FINANCIAL</th>
-        </tr>
-      </thead>
-      <tbody id="access-table">
-        <tr>
-          <td>LOGISTAPRO TMS</td>
-          <td><input type="checkbox" data-role="DISPATCH" data-module="LOGISTAPRO TMS" checked></td>
-          <td><input type="checkbox" data-role="ANALYTICS" data-module="LOGISTAPRO TMS"></td>
-          <td><input type="checkbox" data-role="FINANCIAL" data-module="LOGISTAPRO TMS"></td>
-        </tr>
-        <tr>
-          <td>COMMERCIAL INVOICE BUILDER</td>
-          <td><input type="checkbox" data-role="DISPATCH" data-module="COMMERCIAL INVOICE BUILDER"></td>
-          <td><input type="checkbox" data-role="ANALYTICS" data-module="COMMERCIAL INVOICE BUILDER" checked></td>
-          <td><input type="checkbox" data-role="FINANCIAL" data-module="COMMERCIAL INVOICE BUILDER"></td>
-        </tr>
-        <tr>
-          <td>RATE QUOTING TOOL</td>
-          <td><input type="checkbox" data-role="DISPATCH" data-module="RATE QUOTING TOOL"></td>
-          <td><input type="checkbox" data-role="ANALYTICS" data-module="RATE QUOTING TOOL"></td>
-          <td><input type="checkbox" data-role="FINANCIAL" data-module="RATE QUOTING TOOL" checked></td>
-        </tr>
-      </tbody>
-    </table>
-    <button onclick="saveAccess()" class="glow-btn">Save Access Settings</button>
-  </div>
+
   <script>
     function logout() {
       localStorage.clear();
       window.location.href = "index.html";
     }
 
-    function saveAccess() {
-      const checkboxes = document.querySelectorAll("input[type='checkbox']");
-      const accessMap = {};
-      checkboxes.forEach(cb => {
-        const role = cb.dataset.role;
-        const module = cb.dataset.module;
-        if (!accessMap[role]) accessMap[role] = [];
-        if (cb.checked) accessMap[role].push(module);
-      });
-      localStorage.setItem("roleAccessMap", JSON.stringify(accessMap));
-      alert("Access settings saved.");
-    }
+    document.getElementById("access-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      alert("Access settings saved! (Simulated)");
+    });
   </script>
 </body>
 </html>
