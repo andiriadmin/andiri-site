@@ -1,19 +1,116 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Analytics | Andiri Software</title>
-  <link rel="stylesheet" href="dashboard.css" />
+  <title>Analytics Dashboard | Andiri Software</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #0f111a;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .dashboard {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #11131f;
+      padding: 1rem;
+      height: 100vh;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .sidebar-btn {
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .glow-btn {
+      background-color: #00bfff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px #00bfff;
+      display: block;
+      margin: auto;
+      transition: transform 0.2s;
+    }
+
+    .glow-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .dashboard-content {
+      margin-left: 270px;
+      padding: 2rem;
+      width: 100%;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .kpi-tile {
+      background-color: #1a1d2a;
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+      text-align: center;
+    }
+
+    .kpi-title {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+      color: #00bfff;
+    }
+
+    .kpi-value {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <div class="sidebar">
-    <h1>Analytics</h1>
-    <a class="glow-button" href="dashboard.html">Back to Dashboard</a>
-    <a class="glow-button logout" href="index.html">Logout</a>
-  </div>
-  <div class="dashboard-content">
-    <h2>Coming Soon: Performance Metrics & Visualizations</h2>
-    <p>This module will contain charts, KPIs, and other operational insights for your logistics and warehouse operations.</p>
+  <div class="dashboard">
+    <div class="sidebar">
+      <div class="sidebar-btn"><a class="glow-btn" href="dashboard.html">← Back</a></div>
+    </div>
+    <div class="dashboard-content">
+      <h2 style="color:#00bfff;">Analytics Dashboard</h2>
+      <div class="kpi-grid">
+        <div class="kpi-tile">
+          <div class="kpi-title">Total Shipments</div>
+          <div class="kpi-value">1,245</div>
+        </div>
+        <div class="kpi-tile">
+          <div class="kpi-title">On-Time Delivery %</div>
+          <div class="kpi-value">97%</div>
+        </div>
+        <div class="kpi-tile">
+          <div class="kpi-title">Avg. Delivery Time</div>
+          <div class="kpi-value">3.2 Days</div>
+        </div>
+        <div class="kpi-tile">
+          <div class="kpi-title">Open Orders</div>
+          <div class="kpi-value">56</div>
+        </div>
+        <div class="kpi-tile">
+          <div class="kpi-title">Monthly Revenue</div>
+          <div class="kpi-value">$218K</div>
+        </div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
