@@ -1,0 +1,69 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Access Manager</title>
+  <link rel="stylesheet" href="dashboard.css" />
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Admin Access Manager</h2>
+    <button onclick="logout()" class="glow-btn">Logout</button>
+  </div>
+  <div class="dashboard-content">
+    <h1>Manage Role Access</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Module</th>
+          <th>DISPATCH</th>
+          <th>ANALYTICS</th>
+          <th>FINANCIAL</th>
+        </tr>
+      </thead>
+      <tbody id="access-table">
+        <tr>
+          <td>LOGISTAPRO TMS</td>
+          <td><input type="checkbox" data-role="DISPATCH" data-module="LOGISTAPRO TMS" checked></td>
+          <td><input type="checkbox" data-role="ANALYTICS" data-module="LOGISTAPRO TMS"></td>
+          <td><input type="checkbox" data-role="FINANCIAL" data-module="LOGISTAPRO TMS"></td>
+        </tr>
+        <tr>
+          <td>COMMERCIAL INVOICE BUILDER</td>
+          <td><input type="checkbox" data-role="DISPATCH" data-module="COMMERCIAL INVOICE BUILDER"></td>
+          <td><input type="checkbox" data-role="ANALYTICS" data-module="COMMERCIAL INVOICE BUILDER" checked></td>
+          <td><input type="checkbox" data-role="FINANCIAL" data-module="COMMERCIAL INVOICE BUILDER"></td>
+        </tr>
+        <tr>
+          <td>RATE QUOTING TOOL</td>
+          <td><input type="checkbox" data-role="DISPATCH" data-module="RATE QUOTING TOOL"></td>
+          <td><input type="checkbox" data-role="ANALYTICS" data-module="RATE QUOTING TOOL"></td>
+          <td><input type="checkbox" data-role="FINANCIAL" data-module="RATE QUOTING TOOL" checked></td>
+        </tr>
+      </tbody>
+    </table>
+    <button onclick="saveAccess()" class="glow-btn">Save Access Settings</button>
+  </div>
+  <script>
+    function logout() {
+      localStorage.clear();
+      window.location.href = "index.html";
+    }
+
+    function saveAccess() {
+      const checkboxes = document.querySelectorAll("input[type='checkbox']");
+      const accessMap = {};
+      checkboxes.forEach(cb => {
+        const role = cb.dataset.role;
+        const module = cb.dataset.module;
+        if (!accessMap[role]) accessMap[role] = [];
+        if (cb.checked) accessMap[role].push(module);
+      });
+      localStorage.setItem("roleAccessMap", JSON.stringify(accessMap));
+      alert("Access settings saved.");
+    }
+  </script>
+</body>
+</html>
