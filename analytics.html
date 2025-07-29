@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Analytics Dashboard</title>
+  <title>Analytics Dashboard | Andiri Software</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
     body {
@@ -13,12 +13,15 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
+    .dashboard {
+      display: flex;
+    }
+
     .sidebar {
       width: 200px;
       background-color: #11131f;
-      height: 100vh;
       padding: 1rem;
-      position: fixed;
+      height: 100vh;
     }
 
     .glow-btn {
@@ -28,131 +31,150 @@
       color: black;
       font-weight: bold;
       text-decoration: none;
-      display: block;
-      margin: 0 auto;
       box-shadow: 0 0 10px #00bfff;
-      text-align: center;
+      display: inline-block;
       transition: transform 0.2s;
+      width: 100%;
+      text-align: center;
     }
 
     .glow-btn:hover {
       transform: scale(1.05);
     }
 
-    .dashboard-content {
-      margin-left: 200px;
+    .content {
+      flex-grow: 1;
       padding: 2rem;
     }
 
-    .section-title {
+    .dashboard-title {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #00bfff;
       margin-bottom: 1rem;
+      color: #00bfff;
     }
 
     .kpi-row {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
       margin-bottom: 2rem;
-      flex-wrap: wrap;
     }
 
-    .kpi-tile {
-      background-color: #11131f;
-      padding: 1rem 2rem;
-      border-radius: 12px;
-      box-shadow: 0 0 10px #00bfff;
-      min-width: 180px;
+    .kpi-card {
+      background-color: #1a1c2c;
+      padding: 1rem;
+      border-radius: 10px;
       text-align: center;
+      box-shadow: 0 0 10px #00bfff;
     }
 
-    .kpi-label {
-      font-size: 0.9rem;
+    .kpi-card .label {
       color: #00bfff;
+      font-size: 0.9rem;
     }
 
-    .kpi-value {
-      font-size: 1.6rem;
+    .kpi-card .value {
+      font-size: 1.5rem;
       font-weight: bold;
       margin-top: 0.5rem;
     }
 
-    .grid-section {
+    .tile-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
     }
 
-    .grid-tile {
-      background-color: #11131f;
+    .tile {
+      background-color: #1a1c2c;
       padding: 1.5rem;
-      border-radius: 12px;
+      border-radius: 10px;
       box-shadow: 0 0 10px #00bfff;
+      text-align: center;
     }
 
-    .grid-title {
+    .tile h3 {
       color: #00bfff;
-      font-size: 1.2rem;
-      margin-bottom: 0.8rem;
-      text-align: center;
+      margin-bottom: 0.5rem;
     }
 
-    .placeholder {
-      color: #999;
-      text-align: center;
-      font-style: italic;
+    .tile p {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .tile-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="sidebar">
-    <a href="dashboard.html" class="glow-btn">← Back</a>
-  </div>
-
-  <div class="dashboard-content">
-    <h2 class="section-title">Analytics Dashboard</h2>
-
-    <div class="kpi-row">
-      <div class="kpi-tile">
-        <div class="kpi-label">Total Shipments</div>
-        <div class="kpi-value">1,245</div>
-      </div>
-      <div class="kpi-tile">
-        <div class="kpi-label">On-Time Delivery %</div>
-        <div class="kpi-value">97%</div>
-      </div>
-      <div class="kpi-tile">
-        <div class="kpi-label">Avg. Delivery Time</div>
-        <div class="kpi-value">3.2 Days</div>
-      </div>
-      <div class="kpi-tile">
-        <div class="kpi-label">Open Orders</div>
-        <div class="kpi-value">56</div>
-      </div>
-      <div class="kpi-tile">
-        <div class="kpi-label">Monthly Revenue</div>
-        <div class="kpi-value">$218K</div>
-      </div>
+  <div class="dashboard">
+    <div class="sidebar">
+      <a href="dashboard.html" class="glow-btn">← Back</a>
     </div>
+    <div class="content">
+      <div class="dashboard-title">Analytics Dashboard</div>
 
-    <div class="grid-section">
-      <div class="grid-tile">
-        <div class="grid-title">Delivery Trends</div>
-        <div class="placeholder">[Chart Placeholder]</div>
+      <div class="kpi-row">
+        <div class="kpi-card">
+          <div class="label">Total Shipments</div>
+          <div class="value">1,245</div>
+        </div>
+        <div class="kpi-card">
+          <div class="label">On-Time Delivery %</div>
+          <div class="value">97%</div>
+        </div>
+        <div class="kpi-card">
+          <div class="label">Avg. Delivery Time</div>
+          <div class="value">3.2 Days</div>
+        </div>
+        <div class="kpi-card">
+          <div class="label">Open Orders</div>
+          <div class="value">56</div>
+        </div>
+        <div class="kpi-card">
+          <div class="label">Monthly Revenue</div>
+          <div class="value">$218K</div>
+        </div>
+        <div class="kpi-card">
+          <div class="label">Active Clients</div>
+          <div class="value">134</div>
+        </div>
+        <div class="kpi-card">
+          <div class="label">Carrier Partners</div>
+          <div class="value">42</div>
+        </div>
       </div>
-      <div class="grid-tile">
-        <div class="grid-title">Order Volume</div>
-        <div class="placeholder">[Chart Placeholder]</div>
-      </div>
-      <div class="grid-tile">
-        <div class="grid-title">Customer Satisfaction</div>
-        <div class="placeholder">[Survey/Rating Grid Placeholder]</div>
-      </div>
-      <div class="grid-tile">
-        <div class="grid-title">Revenue Breakdown</div>
-        <div class="placeholder">[Pie Chart Placeholder]</div>
+
+      <div class="tile-grid">
+        <div class="tile">
+          <h3>Delivery Trends</h3>
+          <p>[Chart Placeholder]</p>
+        </div>
+        <div class="tile">
+          <h3>Order Volume</h3>
+          <p>[Chart Placeholder]</p>
+        </div>
+        <div class="tile">
+          <h3>Customer Satisfaction</h3>
+          <p>[Survey/Rating Grid Placeholder]</p>
+        </div>
+        <div class="tile">
+          <h3>Revenue Breakdown</h3>
+          <p>[Pie Chart Placeholder]</p>
+        </div>
+        <div class="tile">
+          <h3>Inventory Turnover</h3>
+          <p>[KPI Graph Placeholder]</p>
+        </div>
+        <div class="tile">
+          <h3>Route Efficiency</h3>
+          <p>[KPI Graph Placeholder]</p>
+        </div>
       </div>
     </div>
   </div>
