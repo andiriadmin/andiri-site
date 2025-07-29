@@ -2,18 +2,159 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Analytics | Andiri Software</title>
-  <link rel="stylesheet" href="dashboard.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Analytics Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #0f111a;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #11131f;
+      height: 100vh;
+      padding: 1rem;
+      position: fixed;
+    }
+
+    .glow-btn {
+      background-color: #00bfff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      display: block;
+      margin: 0 auto;
+      box-shadow: 0 0 10px #00bfff;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+
+    .glow-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .dashboard-content {
+      margin-left: 200px;
+      padding: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #00bfff;
+      margin-bottom: 1rem;
+    }
+
+    .kpi-row {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .kpi-tile {
+      background-color: #11131f;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00bfff;
+      min-width: 180px;
+      text-align: center;
+    }
+
+    .kpi-label {
+      font-size: 0.9rem;
+      color: #00bfff;
+    }
+
+    .kpi-value {
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    .grid-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .grid-tile {
+      background-color: #11131f;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00bfff;
+    }
+
+    .grid-title {
+      color: #00bfff;
+      font-size: 1.2rem;
+      margin-bottom: 0.8rem;
+      text-align: center;
+    }
+
+    .placeholder {
+      color: #999;
+      text-align: center;
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
   <div class="sidebar">
-    <h1>Analytics</h1>
-    <a class="glow-button" href="dashboard.html">Back to Dashboard</a>
-    <a class="glow-button logout" href="index.html">Logout</a>
+    <a href="dashboard.html" class="glow-btn">← Back</a>
   </div>
+
   <div class="dashboard-content">
-    <h2>Coming Soon: Performance Metrics & Visualizations</h2>
-    <p>This module will contain charts, KPIs, and other operational insights for your logistics and warehouse operations.</p>
+    <h2 class="section-title">Analytics Dashboard</h2>
+
+    <div class="kpi-row">
+      <div class="kpi-tile">
+        <div class="kpi-label">Total Shipments</div>
+        <div class="kpi-value">1,245</div>
+      </div>
+      <div class="kpi-tile">
+        <div class="kpi-label">On-Time Delivery %</div>
+        <div class="kpi-value">97%</div>
+      </div>
+      <div class="kpi-tile">
+        <div class="kpi-label">Avg. Delivery Time</div>
+        <div class="kpi-value">3.2 Days</div>
+      </div>
+      <div class="kpi-tile">
+        <div class="kpi-label">Open Orders</div>
+        <div class="kpi-value">56</div>
+      </div>
+      <div class="kpi-tile">
+        <div class="kpi-label">Monthly Revenue</div>
+        <div class="kpi-value">$218K</div>
+      </div>
+    </div>
+
+    <div class="grid-section">
+      <div class="grid-tile">
+        <div class="grid-title">Delivery Trends</div>
+        <div class="placeholder">[Chart Placeholder]</div>
+      </div>
+      <div class="grid-tile">
+        <div class="grid-title">Order Volume</div>
+        <div class="placeholder">[Chart Placeholder]</div>
+      </div>
+      <div class="grid-tile">
+        <div class="grid-title">Customer Satisfaction</div>
+        <div class="placeholder">[Survey/Rating Grid Placeholder]</div>
+      </div>
+      <div class="grid-tile">
+        <div class="grid-title">Revenue Breakdown</div>
+        <div class="placeholder">[Pie Chart Placeholder]</div>
+      </div>
+    </div>
   </div>
 </body>
 </html>
