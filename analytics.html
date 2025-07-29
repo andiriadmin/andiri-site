@@ -48,10 +48,11 @@
     }
 
     .dashboard-title {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
       font-weight: bold;
-      margin-bottom: 1rem;
+      margin-bottom: 2rem;
       color: #00bfff;
+      text-align: center;
     }
 
     .kpi-row {
@@ -83,24 +84,28 @@
     .tile-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
+      gap: 2rem;
     }
 
     .tile {
       background-color: #1a1c2c;
-      padding: 1.5rem;
+      padding: 3rem 2rem;
+      min-height: 280px;
       border-radius: 10px;
       box-shadow: 0 0 10px #00bfff;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     .tile h3 {
       color: #00bfff;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.75rem;
     }
 
     .tile p {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: #ccc;
     }
 
@@ -120,61 +125,22 @@
       <div class="dashboard-title">Analytics Dashboard</div>
 
       <div class="kpi-row">
-        <div class="kpi-card">
-          <div class="label">Total Shipments</div>
-          <div class="value">1,245</div>
-        </div>
-        <div class="kpi-card">
-          <div class="label">On-Time Delivery %</div>
-          <div class="value">97%</div>
-        </div>
-        <div class="kpi-card">
-          <div class="label">Avg. Delivery Time</div>
-          <div class="value">3.2 Days</div>
-        </div>
-        <div class="kpi-card">
-          <div class="label">Open Orders</div>
-          <div class="value">56</div>
-        </div>
-        <div class="kpi-card">
-          <div class="label">Monthly Revenue</div>
-          <div class="value">$218K</div>
-        </div>
-        <div class="kpi-card">
-          <div class="label">Active Clients</div>
-          <div class="value">134</div>
-        </div>
-        <div class="kpi-card">
-          <div class="label">Carrier Partners</div>
-          <div class="value">42</div>
-        </div>
+        <div class="kpi-card"><div class="label">Total Shipments</div><div class="value">1,245</div></div>
+        <div class="kpi-card"><div class="label">On-Time Delivery %</div><div class="value">97%</div></div>
+        <div class="kpi-card"><div class="label">Avg. Delivery Time</div><div class="value">3.2 Days</div></div>
+        <div class="kpi-card"><div class="label">Open Orders</div><div class="value">56</div></div>
+        <div class="kpi-card"><div class="label">Monthly Revenue</div><div class="value">$218K</div></div>
+        <div class="kpi-card"><div class="label">Active Clients</div><div class="value">134</div></div>
+        <div class="kpi-card"><div class="label">Carrier Partners</div><div class="value">42</div></div>
       </div>
 
       <div class="tile-grid">
-        <div class="tile">
-          <h3>Delivery Trends</h3>
-          <p>[Chart Placeholder]</p>
-        </div>
-        <div class="tile">
-          <h3>Order Volume</h3>
-          <p>[Chart Placeholder]</p>
-        </div>
-        <div class="tile">
-          <h3>Customer Satisfaction</h3>
-          <p>[Survey/Rating Grid Placeholder]</p>
-        </div>
-        <div class="tile">
-          <h3>Revenue Breakdown</h3>
-          <p>[Pie Chart Placeholder]</p>
-        </div>
-        <div class="tile">
-          <h3>Inventory Turnover</h3>
-          <p>[KPI Graph Placeholder]</p>
-        </div>
-        <div class="tile">
-          <h3>Route Efficiency</h3>
-          <p>[KPI Graph Placeholder]</p>
-        </div>
+        <div class="tile"><h3>Delivery Trends</h3><p>[Chart Placeholder]</p></div>
+        <div class="tile"><h3>Order Volume</h3><p>[Chart Placeholder]</p></div>
+        <div class="tile"><h3>Customer Satisfaction</h3><p>[Survey/Rating Grid Placeholder]</p></div>
+        <div class="tile"><h3>Revenue Breakdown</h3><p>[Pie Chart Placeholder]</p></div>
+        <div class="tile"><h3>Inventory Turnover</h3><p>[KPI Graph Placeholder]</p></div>
+        <div class="tile"><h3>Route Efficiency</h3><p>[KPI Graph Placeholder]</p></div>
       </div>
     </div>
   </div>
