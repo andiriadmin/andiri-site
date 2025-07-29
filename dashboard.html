@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Dashboard | Andiri Software</title>
-  <link rel="stylesheet" href="css/styles.css" />
-  <script src="js/scripts.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Andiri Modules</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
 </head>
-<body onload="renderDashboard()">
-  <div class="sidebar" id="sidebar"></div>
-  <div class="dashboard-content">
-    <h1>Welcome, <span id="user-email"></span></h1>
-    <button onclick="logout()">Logout</button>
-  </div>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Andiri Modules</h1>
+            <p>Welcome, admin@andiri.io</p>
+            <a class="glow-button" href="logistapro-tms.html">LOGISTAPRO TMS</a>
+            <a class="glow-button" href="rate-quoting-tool.html">RATE QUOTING TOOL</a>
+            <a class="glow-button" href="commercial-invoice-tool.html">COMMERCIAL INVOICE TOOL</a>
+            <a class="glow-button" href="project-management.html">PROJECT MANAGEMENT</a>
+            <a class="glow-button" href="performance-management.html">PERFORMANCE MANAGEMENT</a>
+            <a class="glow-button logout" href="index.html">Logout</a>
+        </div>
+        <div class="content">
+            <img src="assets/logistics_bg.png" alt="Logistics Background" class="background-image"/>
+        </div>
+    </div>
 </body>
 </html>

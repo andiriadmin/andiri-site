@@ -7,13 +7,38 @@
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body class="login-body">
-  <div class="login-container">
-    <h2>ANDIRI SECURE ACCESS</h2>
-    <input type="email" id="email" placeholder="Email" required />
-    <input type="password" id="password" placeholder="Password" required />
-    <button onclick="login()">Login</button>
-    <p id="login-msg"></p>
-  </div>
-  <script src="js/scripts.js"></script>
+
+  <section class="login-section">
+    <h2 class="login-title">ANDIRI SECURE ACCESS</h2>
+
+    <div class="login-container">
+      <input type="email" id="email" placeholder="Email" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button class="glow-btn" onclick="login()">Login</button>
+    </div>
+
+    <p id="login-msg" style="text-align: center; color: red; margin-top: 1rem;"></p>
+  </section>
+
+  <script>
+    const users = {
+      "admin@andiri.io": "andiri123",
+      "operator@andiri.io": "truckpass",
+      "manager@andiri.io": "inv123"
+    };
+
+    function login() {
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('password').value;
+
+      if (users[email] && users[email] === pass) {
+        localStorage.setItem("auth", "true");
+        localStorage.setItem("user", email);
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById('login-msg').innerText = "Invalid credentials.";
+      }
+    }
+  </script>
 </body>
 </html>
