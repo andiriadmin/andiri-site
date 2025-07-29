@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://andiri-io.com/sitemap.xml
