@@ -3,14 +3,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Admin Access Manager</title>
+  <title>Admin Portal | Andiri Software</title>
   <link rel="stylesheet" href="dashboard.css" />
+  <script>
+    window.onload = function () {
+      const role = localStorage.getItem("role");
+      if (role !== "ADMIN") {
+        alert("Access denied. Admins only.");
+        window.location.href = "index.html";
+        return;
+      }
+    };
+  </script>
 </head>
 <body>
   <div class="sidebar">
-    <h2>Admin Access Manager</h2>
-    <button onclick="logout()" class="glow-btn">Logout</button>
+    <h2>ADMIN PORTAL</h2>
+    <a href="dashboard.html" class="glow-btn sidebar-btn">Back to Dashboard</a>
+    <button onclick="logout()" class="glow-btn sidebar-btn">Logout</button>
   </div>
   <div class="dashboard-content">
     <h1>Manage Role Access</h1>
