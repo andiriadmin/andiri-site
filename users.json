@@ -1,0 +1,27 @@
+[
+  {
+    "username": "owner@andiri.io",
+    "password": "owner123",
+    "role": "OWNER"
+  },
+  {
+    "username": "admin@andiri.io",
+    "password": "admin123",
+    "role": "ADMIN"
+  },
+  {
+    "username": "dispatch@andiri.io",
+    "password": "dispatch123",
+    "role": "DISPATCH"
+  },
+  {
+    "username": "analytics@andiri.io",
+    "password": "analytics123",
+    "role": "ANALYTICS"
+  },
+  {
+    "username": "finance@andiri.io",
+    "password": "finance123",
+    "role": "FINANCIAL"
+  }
+]
