@@ -1,25 +1,173 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Analytics | Andiri Software</title>
-  <link rel="stylesheet" href="css/styles.css" />
+  <title>Analytics Dashboard | Andiri Software</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Monitor logistics performance with real-time KPI tiles, freight metrics, and operational analytics via the Andiri Software analytics dashboard." />
+  <meta name="keywords" content="logistics analytics, freight KPIs, dashboard metrics, Andiri analytics, shipping performance, logistics data" />
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Andiri Software">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Analytics Dashboard | Andiri Software" />
+  <meta property="og:description" content="Track key metrics and logistics performance through interactive visualizations and KPIs on the Andiri analytics module." />
+  <meta property="og:url" content="https://andiri-io.com/analytics.html" />
+  <meta property="og:image" content="https://andiri-io.com/assets/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Analytics Dashboard | Andiri Software" />
+  <meta name="twitter:description" content="Explore logistics insights with visualized freight data and operational dashboards." />
+  <meta name="twitter:image" content="https://andiri-io.com/assets/logo.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://andiri-io.com/analytics.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #0f111a;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .dashboard {
+      display: flex;
+    }
+
+    .sidebar {
+      width: 200px;
+      background-color: #11131f;
+      padding: 1rem;
+      height: 100vh;
+    }
+
+    .glow-btn {
+      background-color: #00bfff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      color: black;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px #00bfff;
+      display: inline-block;
+      transition: transform 0.2s;
+      width: 100%;
+      text-align: center;
+    }
+
+    .glow-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .content {
+      flex-grow: 1;
+      padding: 2rem;
+    }
+
+    .dashboard-title {
+      font-size: 1.75rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+      color: #00bfff;
+      text-align: center;
+    }
+
+    .kpi-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .kpi-card {
+      background-color: #1a1c2c;
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 10px #00bfff;
+    }
+
+    .kpi-card .label {
+      color: #00bfff;
+      font-size: 0.9rem;
+    }
+
+    .kpi-card .value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-top: 0.5rem;
+    }
+
+    .tile-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+
+    .tile {
+      background-color: #1a1c2c;
+      padding: 3rem 2rem;
+      min-height: 280px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #00bfff;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .tile h3 {
+      color: #00bfff;
+      margin-bottom: 0.75rem;
+    }
+
+    .tile p {
+      font-size: 0.95rem;
+      color: #ccc;
+    }
+
+    @media (max-width: 768px) {
+      .tile-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-  <div class="sidebar">
-    <!-- Other navigation buttons -->
-    
-<a href="dashboard.html" class="glow-button owner-only" style="display: none;">ANDIRI DASHBOARD</a>
-<script>
-  if (localStorage.role === "OWNER") {
-    document.querySelectorAll(".owner-only").forEach(btn => btn.style.display = "block");
-  }
-</script>
+  <div class="dashboard">
+    <div class="sidebar">
+      <a href="dashboard.html" class="glow-btn">← Back</a>
+    </div>
+    <div class="content">
+      <div class="dashboard-title">Analytics Dashboard</div>
 
-  </div>
-  <div class="content">
-    <!-- Page-specific content here -->
+      <div class="kpi-row">
+        <div class="kpi-card"><div class="label">Total Shipments</div><div class="value">1,245</div></div>
+        <div class="kpi-card"><div class="label">On-Time Delivery %</div><div class="value">97%</div></div>
+        <div class="kpi-card"><div class="label">Avg. Delivery Time</div><div class="value">3.2 Days</div></div>
+        <div class="kpi-card"><div class="label">Open Orders</div><div class="value">56</div></div>
+        <div class="kpi-card"><div class="label">Monthly Revenue</div><div class="value">$218K</div></div>
+        <div class="kpi-card"><div class="label">Active Clients</div><div class="value">134</div></div>
+        <div class="kpi-card"><div class="label">Carrier Partners</div><div class="value">42</div></div>
+      </div>
+
+      <div class="tile-grid">
+        <div class="tile"><h3>Delivery Trends</h3><p>[Chart Placeholder]</p></div>
+        <div class="tile"><h3>Order Volume</h3><p>[Chart Placeholder]</p></div>
+        <div class="tile"><h3>Customer Satisfaction</h3><p>[Survey/Rating Grid Placeholder]</p></div>
+        <div class="tile"><h3>Revenue Breakdown</h3><p>[Pie Chart Placeholder]</p></div>
+        <div class="tile"><h3>Inventory Turnover</h3><p>[KPI Graph Placeholder]</p></div>
+        <div class="tile"><h3>Route Efficiency</h3><p>[KPI Graph Placeholder]</p></div>
+      </div>
+    </div>
   </div>
 </body>
 </html>

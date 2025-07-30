@@ -3,23 +3,333 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Logistapro Tms | Andiri Software</title>
+  <title>Logistapro TMS | Andiri Software</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Logistapro is a modern Transportation Management System (TMS) by Andiri Software — designed for shippers, brokers, and dispatchers." />
+  <meta name="keywords" content="Logistapro, TMS software, dispatch tools, shipment tracking, logistics software, freight management, load board, andiri tms" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Andiri Software" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Logistapro TMS | Andiri Software" />
+  <meta property="og:description" content="Streamline your logistics operations with Logistapro — the custom-built TMS for real-time dispatch, analytics, and visibility." />
+  <meta property="og:url" content="https://andiri-io.com/logistapro-tms.html" />
+  <meta property="og:image" content="https://andiri-io.com/assets/logo.png" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Logistapro TMS by Andiri Software" />
+  <meta name="twitter:description" content="Real-time TMS with custom carrier integrations and dashboard tools." />
+  <meta name="twitter:image" content="https://andiri-io.com/assets/logo.png" />
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://andiri-io.com/logistapro-tms.html" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+
   <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      display: flex;
+      font-family: sans-serif;
+      margin: 0;
+      background-image: url('assets/logistics_bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    }
+    .sidebar {
+      position: relative;
+      z-index: 1;
+      width: 260px;
+      background: rgba(0, 0, 0, 0.85);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 1.5rem 1rem;
+      min-height: 100vh;
+    }
+    .sidebar h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.25rem;
+    }
+    .sidebar p {
+      font-size: 0.85rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.2rem;
+    }
+    .nav-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .nav-buttons button {
+      background: #00bfff;
+      border: none;
+      padding: 10px;
+      color: black;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .nav-buttons button:hover {
+      background: #00a8e8;
+    }
+    .content {
+      flex: 1;
+      position: relative;
+      z-index: 0;
+      padding: 2rem;
+      backdrop-filter: blur(3px);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      min-height: 100vh;
+    }
+    .tab-pane {
+      display: none;
+    }
+    .tab-pane.active {
+      display: block;
+    }
+  </style>
 </head>
 <body>
   <div class="sidebar">
-    <!-- Other navigation buttons -->
-    
-<a href="dashboard.html" class="glow-button owner-only" style="display: none;">ANDIRI DASHBOARD</a>
-<script>
-  if (localStorage.role === "OWNER") {
-    document.querySelectorAll(".owner-only").forEach(btn => btn.style.display = "block");
-  }
-</script>
-
+    <h1>📦 Shipments</h1>
+    <p>This is where you will view and manage all shipment orders.</p>
+    <div class="nav-buttons">
+      <button onclick="switchTab('shipments')">📦 Shipments</button>
+      <button onclick="switchTab('carriers')">🚚 Carriers</button>
+      <button onclick="switchTab('dispatch')">🧑‍✈️ Dispatch</button>
+      <button onclick="switchTab('tracking')">📍 Tracking</button>
+      <button onclick="switchTab('reports')">📊 Reports</button>
+      <button onclick="switchTab('wms')">🔗 WMS Integration</button>
+      <button onclick="window.location.href='dashboard.html'" style="margin-top:20px;">← Back to Dashboard</button>
+    </div>
   </div>
   <div class="content">
-    <!-- Page-specific content here -->
+    
+<div id="shipments" class="tab-pane active">
+  <div class="shipment-grid">
+    <!-- Blue Section: Reference and Carrier Info -->
+    
+<div class="grid-section blue">
+  <h3>Reference & Carrier Info</h3>
+  <div class="form-grid">
+    <label>Customer</label><input type="text" placeholder="Customer" />
+    <label>Transaction ID</label><input type="text" placeholder="Transaction" />
+    <label>PO</label><input type="text" placeholder="PO/Order" />
+    <label>Delivery PO</label><input type="text" placeholder="Delivery PO" />
+    <label>BOL</label><input type="text" placeholder="BOL" />
+    <label>PRO</label><input type="text" placeholder="PRO" />    
+    <label>Currency</label><input type="text" placeholder="Currency" />
+    <label>Warehouse Notes</label><textarea rows="4" placeholder="Warehouse Notes"></textarea>
   </div>
+
+  <h4 style="margin-top: 1.5rem;">Carrier & Equipment</h4>
+  <div class="form-grid">
+    <label>Carrier Name</label><input type="text" placeholder="Carrier Name" />
+    <label>SCAC Code</label><input type="text" placeholder="SCAC Code" />
+    <label>Pickup</label><input type="text" placeholder="Pickup" />
+    <label>Mode</label><input type="text" placeholder="Mode" />
+    <label>Equipment Type</label><input type="text" placeholder="Equipment Type" />
+    <label>Service Level</label><input type="text" placeholder="Service Level" />
+    <label>Distance</label><input type="text" placeholder="Distance" />
+    <label>Carrier Notes</label><textarea rows="4" placeholder="Optional notes for carrier..."></textarea>
+  </div>
+</div>
+
+<style>
+.form-grid {
+  display: grid;
+  grid-template-columns: 140px 240px;
+  row-gap: 6px;
+  column-gap: 15px;
+  align-items: center;
+  margin-top: 10px;
+}
+.form-grid input,
+.form-grid textarea {
+  border-radius: 6px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 5px 8px;
+  font-size: 0.9rem;
+}
+.form-grid label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #000;
+}
+</style>
+
+
+    <!-- Red Section: Origin and Destination -->
+    
+<div class="grid-section red">
+  <h3>Origin</h3>
+  <div class="form-grid">
+    <label>Company</label><input type="text" />
+    <label>Contact Name</label><input type="text" />
+    <label>Phone</label><input type="text" />
+    <label>Email</label><input type="text" />
+    <label>Address 1</label><input type="text" />
+    <label>Address 2</label><input type="text" />
+    <label>City</label><input type="text" />
+    <label>State</label><input type="text" />
+    <label>ZIP</label><input type="text" />
+    <label>Country</label><input type="text" />
+    <label>Hours</label><input type="text" />
+    <label>Instructions</label><textarea rows="3"></textarea>
+  </div>
+
+  <hr style="margin: 20px 0;" />
+
+  <h3>Destination</h3>
+  <div class="form-grid">
+    <label>Company</label><input type="text" />
+    <label>Contact Name</label><input type="text" />
+    <label>Phone</label><input type="text" />
+    <label>Email</label><input type="text" />
+    <label>Address 1</label><input type="text" />
+    <label>Address 2</label><input type="text" />
+    <label>City</label><input type="text" />
+    <label>State</label><input type="text" />
+    <label>ZIP</label><input type="text" />
+    <label>Country</label><input type="text" />
+    <label>Hours</label><input type="text" />
+    <label>Instructions</label><textarea rows="3"></textarea>
+  </div>
+</div>
+
+
+    <!-- Green Section: Cargo Details -->
+    
+<div class="grid-section green">
+  <h3>Cargo Details</h3>
+  <div class="form-grid">
+    <label>Total Weight</label>
+    <div style="display: flex; gap: 6px;">
+      <input type="text" style="flex: 1;" />
+      <select>
+        <option value="lbs">lbs</option>
+        <option value="kg">kg</option>
+      </select>
+    </div>
+
+    <label>Total Volume (cu ft)</label><input type="text" />
+    <label>Units</label><input type="text" />
+    <label>Unit Type</label><input type="text" />
+    <label>Pallet Count</label><input type="text" />
+    <label>Commodity</label><input type="text" />
+    <label>NMFC</label><input type="text" />
+
+    <label>Dimensions</label>
+    <div style="display: flex; gap: 6px;">
+      <input type="text" placeholder="L" />
+      <input type="text" placeholder="W" />
+      <input type="text" placeholder="H" />
+      <select>
+        <option value="in">in</option>
+        <option value="cm">cm</option>
+      </select>
+    </div>
+
+    <label>Hazmat</label><input type="text" />
+    <label>UN Number</label><input type="text" />
+
+    <label>Accessorials</label>
+    <select id="accessorialSelect">
+      <option value="">-- Select --</option>
+      <option value="Liftgate">Liftgate</option>
+      <option value="Residential Delivery">Residential Delivery</option>
+      <option value="Limited Access">Limited Access</option>
+      <option value="Inside Delivery">Inside Delivery</option>
+      <option value="Delivery Appointment">Delivery Appointment</option>
+    </select>
+    <textarea id="accessorialOutput" rows="3" readonly></textarea>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const select = document.getElementById("accessorialSelect");
+  const output = document.getElementById("accessorialOutput");
+
+  select.addEventListener("change", function () {
+    const value = this.value;
+    if (value && !output.value.includes(value)) {
+      output.value += (output.value ? "\n" : "") + value;
+    }
+    this.selectedIndex = 0;
+  });
+});
+</script>
+
+
+    <!-- Yellow Section: Actions -->
+    <div class="grid-section yellow">
+      <h3>Actions</h3>
+      <button>Message</button><br/><br/>
+      <button>Documents</button>
+    </div>
+  </div>
+</div>
+
+<style>
+.shipment-grid {
+  align-items: start;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 180px;
+  gap: 0.75rem;
+  padding: 1rem;
+}
+.grid-section {
+  height: 100%;
+  min-height: 80vh;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1rem;
+  border-radius: 8px;
+  color: #000;
+}
+.grid-section h3 {
+  margin-top: 0;
+}
+.blue {
+  grid-column: 1;
+}
+.red {
+  grid-column: 2;
+}
+.green {
+  grid-column: 3;
+}
+.yellow {
+  grid-column: 4;
+}
+</style>
+
+    <div id="carriers" class="tab-pane">
+      <p>Carrier data and tools will appear here.</p>
+    </div>
+    <div id="dispatch" class="tab-pane">
+      <p>Dispatch controls will appear here.</p>
+    </div>
+    <div id="tracking" class="tab-pane">
+      <p>Tracking data will appear here.</p>
+    </div>
+    <div id="reports" class="tab-pane">
+      <p>Reports and analytics will appear here.</p>
+    </div>
+    <div id="wms" class="tab-pane">
+      <p>Orders imported from Extensiv WMS will appear here.</p>
+    </div>
+  </div>
+  <script src="js/logistapro-tms.js"></script>
 </body>
 </html>
