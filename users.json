@@ -3,22 +3,22 @@
     "username": "owner@andiri.io",
     "password": "owner123",
     "role": "OWNER"
-  },
+  }
   {
     "username": "admin@andiri.io",
     "password": "andiri123",
     "role": "ADMIN"
-  },
+  }
   {
     "username": "dispatch@andiri.io",
     "password": "truck123",
     "role": "DISPATCH"
-  },
+  }
   {
     "username": "analytics@andiri.io",
     "password": "data456",
     "role": "ANALYTICS"
-  },
+  }
   {
     "username": "finance@andiri.io",
     "password": "fin789",
